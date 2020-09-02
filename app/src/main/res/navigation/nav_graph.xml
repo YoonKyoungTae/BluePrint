@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/blankFragment">
+    app:startDestination="@id/fragment_a">
 
     <fragment
-        android:id="@+id/blankFragment"
+        android:id="@+id/fragment_a"
         android:name="dev.androidblog.blueprint.AFragment"
-        android:label="Blank"
+        android:label="a"
         tools:layout="@layout/fragment_a" />
 
 </navigation>
