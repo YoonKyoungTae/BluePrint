@@ -2,6 +2,7 @@ package dev.androidblog.blueprint.fragment
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import dev.androidblog.blueprint.R
@@ -11,6 +12,9 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        et_id.setText(arguments?.getInt("prefix").toString())
+
         btn_second.setOnClickListener {
 
             //Safe Arg를 이용한 Fragment 이동방법
@@ -26,7 +30,10 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
              * By using an action, you can also animate transitions between the destinations.
              * For more information, see Animate transitions between destinations.
              */
-            findNavController().navigate(R.id.action_firstFragment_to_secondFragment)
+
+
+            val id = et_id.text.toString()
+            findNavController().navigate(R.id.action_firstFragment_to_secondFragment, bundleOf("id" to id))
         }
     }
 }

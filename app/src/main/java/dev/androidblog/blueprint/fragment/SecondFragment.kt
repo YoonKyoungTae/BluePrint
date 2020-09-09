@@ -14,5 +14,7 @@ class SecondFragment: Fragment(R.layout.fragment_second) {
         btn_first.setOnClickListener {
             findNavController().navigate(R.id.action_secondFragment_to_firstFragment)
         }
+
+        tv_title.text = "Second Fragment\nID : ${arguments?.getString("id")}"
     }
 }
